@@ -1,0 +1,70 @@
+document.addEventListener('DOMContentLoaded', function () {
+    var location = document.getElementById('location');
+    var getStartedBtn = document.getElementById('get-started');
+    var modal = document.getElementById("bookingModal");
+    var closeModal = document.getElementsByClassName("close")[0];
+    var bookingIframe = document.getElementById("bookingIframe");
+    var loadingText = document.getElementById("loadingText");
+
+    // Mapping of locations to Acuity calendar IDs
+    var locationUrls = {
+        'Albion': 'https://app.acuityscheduling.com/schedule.php?owner=33266014&calendarID=10690266',
+        'Burpengary': 'https://app.acuityscheduling.com/schedule.php?owner=33266014&calendarID=10690827',
+        'Capalaba': 'https://app.acuityscheduling.com/schedule.php?owner=33266014&calendarID=10690826',
+        'Carindale': 'https://app.acuityscheduling.com/schedule.php?owner=33266014&calendarID=10690825',
+        'Carseldine': 'https://app.acuityscheduling.com/schedule.php?owner=33266014&calendarID=10690831',
+        'Chermside': 'https://app.acuityscheduling.com/schedule.php?owner=33266014&calendarID=10690824',
+        'Deagon': 'https://app.acuityscheduling.com/schedule.php?owner=33266014&calendarID=10690051'
+    };
+
+    function updateLink() {
+        var locationValue = location.value;
+        if (locationValue && locationUrls[locationValue]) {
+            getStartedBtn.onclick = function () {
+                window.scrollTo(0, 0); // Instantly scroll to the top of the page
+                bookingIframe.src = locationUrls[locationValue];
+                modal.style.display = "block"; // Show the modal
+                loadingText.style.display = "block"; // Show loading text
+				document.body.style.overflow = "hidden"; // Disable scrolling
+
+                var checkIframeLoaded = setInterval(function () {
+                    if (bookingIframe.contentWindow.document.readyState === "complete") {
+                        clearInterval(checkIframeLoaded); // Stop checking
+                        loadingText.style.display = "none"; // Hide loading text
+                        bookingIframe.style.display = "block"; // Show iframe
+						document.body.style.overflow = "hidden"; // Disable scrolling
+                    }
+                }, 200); // Check every 200ms
+
+                // Fallback in case the iframe takes longer than 5 seconds
+                setTimeout(function () {
+                    clearInterval(checkIframeLoaded); // Stop checking
+                    loadingText.style.display = "none"; // Hide loading text
+                    bookingIframe.style.display = "block"; // Show iframe even if not fully loaded
+                }, 5000); // 5 seconds
+            };
+        } else {
+            getStartedBtn.onclick = function () { return false; };
+        }
+    }
+
+    location.addEventListener('change', updateLink);
+
+    closeModal.addEventListener('click', function() {
+        modal.style.display = "none"; // Hide the modal
+        bookingIframe.src = ""; // Clear the iframe source
+        bookingIframe.style.display = "none"; // Hide iframe when modal is closed
+        loadingText.style.display = "block"; // Reset loading text visibility
+		document.body.style.overflow = ""; // Enable scrolling
+    });
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none"; // Hide the modal if clicked outside of it
+            bookingIframe.src = ""; // Clear the iframe source
+            bookingIframe.style.display = "none"; // Hide iframe when modal is closed
+            loadingText.style.display = "block"; // Reset loading text visibility
+			document.body.style.overflow = ""; // Enable scrolling
+        }
+    };
+});
