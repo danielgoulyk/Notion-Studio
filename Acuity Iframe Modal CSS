@@ -1,0 +1,162 @@
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Darker background dimming */
+    z-index: 999; /* Ensure it's behind the modal */
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+	backdrop-filter: blur(30px); /* Apply blur effect */
+	-webkit-backdrop-filter: blur(30px); /* Apply blur effect */
+	margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensure the modal is positioned properly */
+}
+
+/* Modal content with margins */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* Adjust top margin for desired spacing */ /* top | left and right | bottom */
+    padding: 20px;
+    border-radius: 13px; /* Rounded corners */
+    width: 100%; /* Adjust as needed */
+    max-width: 1000px;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    height: auto; /* was auto */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* iframe height */
+.modal-content iframe {
+    height: 550px !important; /* Force the iframe to match modal height */
+    width: 100%;
+}
+
+
+/* Loading message */
+#loadingText {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 50px 0;
+	color: black;
+    display: none; /* Initially hidden */
+}
+
+/* Close button */
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #fff;
+
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* mobile specific settings */
+@media only screen and (max-width: 600px) {
+	
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Darker background dimming */
+    z-index: 999; /* Ensure it's behind the modal */
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+	backdrop-filter: blur(30px); /* Apply blur effect */
+	-webkit-backdrop-filter: blur(30px); /* Apply blur effect */
+}
+
+/* Modal content full screen on mobile */
+.modal-content {
+    background-color: #fefefe;
+    margin: 0; /* Adjust top margin for desired spacing */
+    padding: 100px 0 0 0;
+    border-radius: 0px; /* No rounded corners on mobile */
+    width: 100%; /* Adjust as needed */
+    max-width: 1000px;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    height: auto; /* was auto */
+    top: 0%;
+    transform: translateY(0%); /* was 50% */
+}
+
+/* iframe height */
+.modal-content iframe {
+    height: 800px !important; /* Force the iframe to match modal height */
+    width: 100%;
+}
+
+
+/* Loading message */
+#loadingText {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 50px 0;
+	color: black;
+    display: none; /* Initially hidden */
+}
+
+/* Close button */
+.close {
+    position: inherit;
+    top: 50px;
+    right: -15px;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: white;
+	padding: 10px 10px;
+	border-radius: 100px;
+	background: #ff5100;
+	z-index:1005;
+	
+
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+	
+}
