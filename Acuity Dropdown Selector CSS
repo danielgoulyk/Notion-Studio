@@ -1,0 +1,152 @@
+#course-selector {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* Align items at the bottom */
+    padding: 0px; /* was 15px */
+    background-color: ; /* was #ff5100 */
+    border-radius: 13px;
+    /*box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);*/
+    max-width: 1180px;
+    margin: 20px 0;
+    font-family: 'Arial', sans-serif;
+	align-items: stretch;
+}
+
+#location-container {
+    padding: 15px; /* was 15px */
+	flex-basis: 50%; /* Adjust width to accommodate the new button */
+    display: flex;
+    flex-direction: column;
+    background-color: #ff5100; /* Red background */
+	border-radius: 13px 0 0 13px; /* top-left | top-right | bottom-right | bottom-left */
+}
+
+#button-container {
+	padding: 15px; /* was 15px */
+	flex-basis: 25%; /* Adjust width to accommodate the new button */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px; /* Add small left and right margin */
+    background-color: #ff5100; /* Green background */
+	border-radius: 0 13px 13px 0; /* top-left | top-right | bottom-right | bottom-left */
+}
+
+#group-booking-container {
+	padding: 15px; /* was 15px */
+	flex-basis: 25%; /* Adjust width to accommodate the new button */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px; /* Add small left and right margin */
+    background-color: transparent; /* Blue background */
+	border-radius: 0 13px 13px 0; /* top-left | top-right | bottom-right | bottom-left */
+}
+
+#course-selector label {
+    margin-bottom: 5px;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+}
+
+#course-selector select {
+    padding: 12px 12px; /* Slightly increase padding */
+    font-size: 18px; /* Increase font size */
+	font-family: 'Inter', 'Arial', sans-serif;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 13px;
+    width: 100%;
+    height: auto;
+    line-height: 1.5;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#course-selector select:focus,
+#course-selector select:hover {
+    border-color: #fff;
+    box-shadow: 0 0 8px #fff;
+    outline: none;
+}
+
+#get-started {
+    padding: 10px 10px;
+    background-color: #fff;
+    color: #ff5100 !important;
+    text-decoration: none;
+    border: none;
+    border-radius: 13px;
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    margin: 0px; /* Add small left and right margin */
+}
+
+#group-booking-btn {
+    padding: 10px 10px;
+    background-color: #ff5100;
+    color: #fff !important;
+    text-decoration: none;
+    border: none;
+    border-radius: 13px;
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    margin: 0px; /* Add small left and right margin */
+}
+
+#group-booking-btn:hover {
+    box-shadow: 0 0 8px #fff; /* Only apply glow on hover */
+}
+
+#get-started:hover {
+    box-shadow: 0 0 8px #fff; /* Only apply white glow on hover */
+}
+
+/* Mobile (max-width: 600px) */
+@media only screen and (max-width: 600px) {
+    #course-selector {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #location-container, #button-container, #group-booking-container {
+        flex-basis: 100%;
+    }
+
+    #button-container, #group-booking-container {
+        margin-bottom: 0;
+    }
+
+    #get-started, #group-booking-btn {
+        width: 100%; /* Ensure the buttons take up full width */
+    }
+	
+	#location-container {
+	border-radius: 13px 13px 0 0; /* top-left | top-right | bottom-right | bottom-left */
+	}
+
+	#button-container {
+	border-radius: 0 0 13px 13px; /* top-left | top-right | bottom-right | bottom-left */
+	}
+
+	#group-booking-container {
+	border-radius: 0 0 0 0; /* top-left | top-right | bottom-right | bottom-left */
+	margin-top: 15px;
+	}
+	
+}
