@@ -1,0 +1,29 @@
+<div id="course-selector">
+    <div id="location-container">
+        <select id="location">
+            <option value="">Select a location to get started</option>
+            <option value="Albion">Albion (14 McLennan St, Albion QLD 4010)</option>
+            <option value="Burpengary">Burpengary (2/9 North Shore Drive, Burpengary QLD 4505)</option>
+            <option value="Capalaba">Capalaba (26-28 Finucane Rd, Capalaba QLD 4157)</option>
+            <option value="Carindale">Carindale (68 Meadowlands Rd, Carina QLD 4152)</option>
+            <option value="Carseldine">Carseldine (1910 Gympie Rd, Bridgeman Downs QLD 4035)</option>
+            <option value="Chermside">Chermside (240 Hamilton Rd, Chermside QLD 4032)</option>
+            <option value="Deagon">Deagon (21 Braun Street, Deagon QLD 4017)</option>
+        </select>
+    </div>
+    <div id="button-container">
+        <button id="get-started">Get Started</button>
+    </div>
+    <div id="group-booking-container">
+        <a id="group-booking-btn" href="https://www.brisbanefirstaidcourse.com.au/onsite-groups/">Onsite Bookings</a>
+    </div>
+</div>
+
+<!-- Modal -->
+<div id="bookingModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="loadingText">Loading...</div> <!-- Loading text added here -->
+        <iframe id="bookingIframe" src="" title="Schedule Appointment" width="100%" height="800" frameborder="0" style="display:none;"></iframe> <!-- Iframe initially hidden -->
+    </div>
+</div>
